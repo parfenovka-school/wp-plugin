@@ -82,7 +82,7 @@ endif;
 
 function run_parfenovka() {
 
-	function podbelsk_admin_footer () {
+	function parfenovka_admin_footer () {
 		$footer_text = array(
 			'GitHub:&nbsp;<a href="https://github.com/parfenovka-school" target="_blank">https://github.com/parfenovka-school</a>',
 			'Поддержка:&nbsp;<a href="https://github.com/ProjectSoft-STUDIONIONS" target="_blank">ProjectSoft</a>',
@@ -92,7 +92,7 @@ function run_parfenovka() {
 		return implode( ' • ', $footer_text);
 	}
 	 
-	add_filter('admin_footer_text', 'podbelsk_admin_footer');
+	add_filter('admin_footer_text', 'parfenovka_admin_footer');
 
 	//
 	remove_action( 'do_feed_rdf',  'do_feed_rdf',  10, 1 );
