@@ -1,0 +1,7 @@
+*-lock.json
+*.sublime-workspace
+bower_components
+node_modules
+test
+tests
+viewer
