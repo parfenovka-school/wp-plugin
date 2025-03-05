@@ -9,6 +9,7 @@ module.exports = function(grunt) {
 				"autoprefixer",
 				"group_css_media_queries",
 				"cssmin",
+				"lineending",
 				"compress"
 			]
 		};
@@ -151,6 +152,21 @@ module.exports = function(grunt) {
 					'parfenovka/css/admin.min.css' : ['parfenovka/css/admin.css'],
 					'parfenovka/css/jquery.fancybox.min.css' : ['parfenovka/css/jquery.fancybox.css']
 				}
+			}
+		},
+		lineending: {
+			dist: {
+				options: {
+					eol: 'lf'
+				},
+				files: [
+					{
+						expand: true,
+						cwd: 'parfenovka',
+						src: ['**/*.{css,js,php,json,html}'],
+						dest: 'parfenovka'
+					}
+				]
 			}
 		},
 		compress: {
