@@ -4,7 +4,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 $_wp_additional_image_sizes['parfenovka-size'] = array(
-	'width'  => absint( 500 ),
+	'width'  => absint( 700 ),
 	'height' => absint( 0 ),
 	'crop'   => false,
 );
@@ -18,7 +18,7 @@ class GalleryShortCode {
 		/**
 		 ** Переопределяем стандартную галерею
 		**/
-		add_filter( 'post_gallery',              array(__CLASS__, 'gallery_function'   ), 10, 2 );
+		add_filter( 'post_gallery',              array(__CLASS__, 'gallery_function'   ), 1, 2 );
 	}
 	
 	static function disable_srcset( $sources ) {
@@ -35,11 +35,11 @@ class GalleryShortCode {
 				foreach($arrs as $idstr):
 					$id = (int)$idstr;
 					if($src = wp_get_attachment_url($id)):
-						$medium = wp_get_attachment_image_src($id, "parfenovka-size");
+						$medium = wp_get_attachment_image_src($id, "large");
 						$out .= '
 			<figure class="wp-block-image size-large">
 				<a href="' . $src . '" target="_blank" data-fancybox="gallery-' . $post->ID . '">
-					<img decoding="async" width="' . $medium[1] . '" height="' . $medium[2] . '" data-id="' . $id . '" class="wp-image-' . $id . '" src="' . $medium[0] . '" alt="">
+					<img decoding="async" data-id="' . $id . '" class="wp-image-' . $id . '" src="' . $medium[0] . '" alt="">
 				</a>
 			</figure>';
 					endif;

@@ -52,11 +52,14 @@
 					],
 					opts : {
 						afterShow : function( instance, current ) {
-							$('.fancybox-content').addClass(ext == "xlsx" ? 'xlsx_viewer' : 'docx_viewer')
+							$('.fancybox-content').addClass(`${ext}_viewer`)
 						},
 						afterLoad : function( instance, current ) {
-							$('.fancybox-content').addClass(ext == "xlsx" ? 'xlsx_viewer' : 'docx_viewer')
+							$('.fancybox-content').addClass(`${ext}_viewer`)
 						},
+						afterClose: function() {
+							window.localStorage.removeItem('pdfjs.history');
+						}
 					}
 				};
 				console.log(options.src);
