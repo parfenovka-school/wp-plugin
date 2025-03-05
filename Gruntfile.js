@@ -9,6 +9,7 @@ module.exports = function(grunt) {
 				"autoprefixer",
 				"group_css_media_queries",
 				"cssmin",
+				"compress"
 			]
 		};
 
@@ -164,7 +165,7 @@ module.exports = function(grunt) {
 						src: [
 							'parfenovka/**'
 						],
-						dest: '/parfenovka/'
+						dest: '/'
 					},
 				],
 			},

@@ -90,25 +90,27 @@
 				return !1;
 			}
 		}
-	});
-	/*
-	$("#content article").each((index, element, array) => {
-		let id = $(element).attr("id");
-		$(".wp-block-image img", element).each((i, e, a) => {
-			let lnk = $(e).closest("a");
-			if(lnk.length){
-				lnk.each((li, le, la) => {
-					le.setAttribute("data-fancybox", id);
+	})
+	/**
+	 * Клик на ссылке video в контенте
+	 */
+	.on('click', "a[href$='.mp4']", function(e) {
+		let target = e.target.nodeName == "A" ? $(e.target) : $(e.target).closest('a');
+		// Если существует
+		// и нет атрибута data-fancybox
+		if (target[0] && (typeof target.data("fancybox") !== "string")) {
+			let base = window.location.origin,
+				reg = new RegExp("^" + base),
+				href = target[0].href;
+			// Если проходит регулярку
+			if(reg.test(href)){
+				// Открываем fancybox
+				e.preventDefault();
+				$.fancybox.open({
+					src: href
 				});
-			}else{
-				lnk = $("<a></a>");
-				lnk.attr({
-					"href": $(e).attr("data-src"),
-					"data-fancybox": id
-				});
-				$(e).wrap(lnk);
+				return !1;
 			}
-		});
+		}
 	});
-	*/
 }(jQuery));

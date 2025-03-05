@@ -93,7 +93,7 @@
 	})
 	/**
 	 * Клик на ссылке video в контенте
-	 */;
+	 */
 	.on('click', "a[href$='.mp4']", function(e) {
 		let target = e.target.nodeName == "A" ? $(e.target) : $(e.target).closest('a');
 		// Если существует
