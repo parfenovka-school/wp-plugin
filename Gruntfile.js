@@ -151,7 +151,24 @@ module.exports = function(grunt) {
 					'parfenovka/css/jquery.fancybox.min.css' : ['parfenovka/css/jquery.fancybox.css']
 				}
 			}
-		}
+		},
+		compress: {
+			main: {
+				options: {
+					archive: 'parfenovka.zip'
+				},
+				files: [
+					{
+						expand: true,
+						cwd: '.',
+						src: [
+							'parfenovka/**'
+						],
+						dest: '/parfenovka/'
+					},
+				],
+			},
+		},
 	});
 	grunt.registerTask('default',	gc.default);
 };
