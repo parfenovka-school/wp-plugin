@@ -19,7 +19,7 @@ class WpBashBoardWidgets {
 	<div class="podbelsk_dash_wrapper-header"></div>
 	<ul>
 		<li>Telegram: <a href="https://t.me/ProjectSoft" target="_blank">ProjectSoft</a> aka Чернышёв Андрей</li>
-		<li>Email: <a href="mailto:projectsoft2009@yandex.ru?subject=Проблемы с сайтом ' . $site_title . '">projectsoft2009@yandex.ru</a></li>
+		<li>Email: <a href="mailto:projectsoft2009@yandex.ru?subject=Проблемы с сайтом ' . site_name() . '">projectsoft2009@yandex.ru</a></li>
 		<li>Phone: <a href="tel:+79376445464" target="_blank">+7(937)644-54-64</a></li>
 	</ul>
 </div>';

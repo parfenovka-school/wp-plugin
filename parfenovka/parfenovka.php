@@ -80,6 +80,10 @@ if ( ! function_exists( 'twentyfourteen_posted_on' ) ) :
 	}
 endif;
 
+function site_name() {
+	return get_bloginfo( 'name' );
+}
+
 function run_parfenovka() {
 
 	function parfenovka_admin_footer () {
@@ -88,9 +92,9 @@ function run_parfenovka() {
 			'GitHub:&nbsp;<a href="https://github.com/parfenovka-school" target="_blank">https://github.com/parfenovka-school</a>',
 			'Поддержка:&nbsp;<a href="https://t.me/ProjectSoft" target="_blank">ProjectSoft</a> aka Чернышёв Андрей',
 			'Тел.:&nbsp;<a href="tel:+79376445464" target="_blank">+7(937)644-54-64</a>',
-			'Email:&nbsp;<a href="mailto:projectsoft2009@yandex.ru?subject=Проблемы с сайтом ' . $site_title . '">projectsoft2009@yandex.ru</a>'
+			'Email:&nbsp;<a href="mailto:projectsoft2009@yandex.ru?subject=Проблемы с сайтом ' . site_name() . '">projectsoft2009@yandex.ru</a>'
 		);
-		return implode( ' • ', $footer_text);
+		return implode( ' 🛠 ', $footer_text);
 	}
 	 
 	add_filter('admin_footer_text', 'parfenovka_admin_footer');
@@ -141,6 +145,8 @@ function run_parfenovka() {
 }
 
 run_parfenovka();
+
+
 
 // Собственный RSS
 // add_action('init', 'customRSS');
