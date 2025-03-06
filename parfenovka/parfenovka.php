@@ -83,11 +83,12 @@ endif;
 function run_parfenovka() {
 
 	function parfenovka_admin_footer () {
+		$site_title = get_bloginfo( 'name' );
 		$footer_text = array(
 			'GitHub:&nbsp;<a href="https://github.com/parfenovka-school" target="_blank">https://github.com/parfenovka-school</a>',
 			'Поддержка:&nbsp;<a href="https://t.me/ProjectSoft" target="_blank">ProjectSoft</a> aka Чернышёв Андрей',
 			'Тел.:&nbsp;<a href="tel:+79376445464" target="_blank">+7(937)644-54-64</a>',
-			'Email:&nbsp;<a href="mailto:projectsoft2009@yandex.ru?subject=Проблемы с сайтом ГБОУ СОШ имени Н. С. ДОРОВСКОГО с. ПОДБЕЛЬСК">projectsoft2009@yandex.ru</a>'
+			'Email:&nbsp;<a href="mailto:projectsoft2009@yandex.ru?subject=Проблемы с сайтом ' . $site_title . '">projectsoft2009@yandex.ru</a>'
 		);
 		return implode( ' • ', $footer_text);
 	}
