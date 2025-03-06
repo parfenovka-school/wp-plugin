@@ -83,7 +83,7 @@ class Video {
 				//$json['track_id']
 				$embed = "https://rutube.ru/play/embed/" . $this->videoInfo['id'] . "/?skinColor=41a62a";
 				$this->videoInfo['embed'] = $embed;
-				$this->videoInfo['video'] = '<div class="wp-block-video embed"><div class="embed-responsive embed-responsive-16by9"><iframe id="' . $id . '" src="' . $embed . '" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div></div>';
+				$this->videoInfo['video'] = '<div class="wp-block-video embed"><figure class="embed-responsive embed-responsive-16by9"><iframe id="' . $id . '" src="' . $embed . '" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></figure></div>';
 			}else{
 				return array();
 			}
@@ -109,7 +109,7 @@ class Video {
 				}
 				$embed .= 'showinfo=0&modestbranding=1&rel=0';
 				$this->videoInfo['embed'] = $embed;
-				$this->videoInfo['video'] = '<div class="wp-block-video embed"><div class="embed-responsive embed-responsive-16by9"><iframe src="' . $embed . '" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe></div></div>';
+				$this->videoInfo['video'] = '<div class="wp-block-video embed"><figure class="embed-responsive embed-responsive-16by9"><iframe src="' . $embed . '" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe></figure></div>';
 			}
 		}else{
 			return array();

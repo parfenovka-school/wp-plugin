@@ -41,14 +41,14 @@ define( 'PARFENOVKA_VERSION', '1.0.0' );
  * The code that runs during plugin activation.
  */
 function activate_parfenovka() {
-	// Podbelsk_Activator::activate();
+	// Parfenovka_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  */
 function deactivate_parfenovka() {
-	// Podbelsk_Deactivator::deactivate();
+	// Parfenovka_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_parfenovka' );
@@ -85,7 +85,7 @@ function run_parfenovka() {
 	function parfenovka_admin_footer () {
 		$footer_text = array(
 			'GitHub:&nbsp;<a href="https://github.com/parfenovka-school" target="_blank">https://github.com/parfenovka-school</a>',
-			'Поддержка:&nbsp;<a href="https://github.com/ProjectSoft-STUDIONIONS" target="_blank">ProjectSoft</a>',
+			'Поддержка:&nbsp;<a href="https://t.me/ProjectSoft" target="_blank">ProjectSoft</a> aka Чернышёв Андрей',
 			'Тел.:&nbsp;<a href="tel:+79376445464" target="_blank">+7(937)644-54-64</a>',
 			'Email:&nbsp;<a href="mailto:projectsoft2009@yandex.ru?subject=Проблемы с сайтом ГБОУ СОШ имени Н. С. ДОРОВСКОГО с. ПОДБЕЛЬСК">projectsoft2009@yandex.ru</a>'
 		);

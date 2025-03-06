@@ -11,9 +11,11 @@ class VideoShortCode {
 
 	static function ps_video_function($atts){
 		global $post;
+		$out = "";
 		if($atts["links"]):
 			$arrs = explode(',', $atts["links"]);
 			if(count($arrs)):
+				$out = '<figure class="wp-block-gallery has-nested-images videogallery">';
 				foreach($arrs as $link):
 					$video = new Video($link);
 					$videoInfo = $video->videoInfo;
@@ -21,6 +23,7 @@ class VideoShortCode {
 						$out .= $videoInfo['video'];
 					endif;
 				endforeach;
+				$out .= "</figure>";
 			endif;
 		endif;
 		return $out;

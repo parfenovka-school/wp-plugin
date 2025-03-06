@@ -2,12 +2,14 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
-
+/*
 $_wp_additional_image_sizes['parfenovka-size'] = array(
 	'width'  => absint( 700 ),
 	'height' => absint( 0 ),
 	'crop'   => false,
 );
+*/
+add_image_size('parfenovka-size', 700, 700, false);
 // Класс вывода галерей
 class GalleryShortCode {
 	static function init() {

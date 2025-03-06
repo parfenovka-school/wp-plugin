@@ -17,7 +17,7 @@ class WpBashBoardWidgets {
 		echo '<div class="podbelsk_dash_wrapper">
 	<div class="podbelsk_dash_wrapper-header"></div>
 	<ul>
-		<li>Telegram: <a href="https://t.me/ProjectSoft" target="_blank">@ProjectSoft</a></li>
+		<li>Telegram: <a href="https://t.me/ProjectSoft" target="_blank">ProjectSoft</a> aka Чернышёв Андрей</li>
 		<li>Phone: <a href="tel:+79376445464" target="_blank">+7(937)644-54-64</a></li>
 	</ul>
 </div>';
