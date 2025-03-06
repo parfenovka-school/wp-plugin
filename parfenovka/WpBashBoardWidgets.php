@@ -9,7 +9,7 @@ class WpBashBoardWidgets {
 	}
 
 	static function add_dashboard_widgets() {
-		wp_add_dashboard_widget('podbelsk_dashboard_widget', 'Техническая поддержка сайта', array( __CLASS__, 'dashboard_widget_function') );
+		wp_add_dashboard_widget('podbelsk_dashboard_widget', '<span>🛠 Техническая поддержка сайта</span>', array( __CLASS__, 'dashboard_widget_function') );
 	}
 
 	static function dashboard_widget_function(){
