@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * Template Name: Custom RSS Template - Feedname
  */

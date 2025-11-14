@@ -150,6 +150,12 @@ figure.wp-block-gallery.has-nested-images {
   align-items: normal;
 }
 
+.tm-article .tm-article-content > p.text-right:last-child {
+  margin-top: 0px;
+  padding-top: 15px;
+  clear: both;
+}
+
 @media (max-width: 600px) {
   :root {
     --gallery-column: 100%;

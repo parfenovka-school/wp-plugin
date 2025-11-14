@@ -17,3 +17,19 @@
   margin-right: -12px;
   margin-bottom: 12px;
 }
+
+#dashboard-widgets .postbox-container .empty-container {
+  outline: unset;
+}
+
+#dashboard-widgets .postbox-container .empty-container:after {
+  visibility: hidden;
+}
+
+body.is-dragging-metaboxes #dashboard-widgets .postbox-container .empty-container {
+  outline: 3px dashed #546970;
+}
+
+body.is-dragging-metaboxes #dashboard-widgets .postbox-container .empty-container:after {
+  visibility: visible;
+}

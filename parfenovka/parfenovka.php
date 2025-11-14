@@ -1,22 +1,15 @@
 <?php
-
 /**
- * The plugin bootstrap file
  *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
- *
- * @link              https://github.com/ProjectSoft-STUDIONIONS
- * @since             1.0.0
+ * @link              https://github.com/parfenovka-school/wp-plugin
+ * @since             1.0.1
  * @package           Parfenovka
  *
  * @wordpress-plugin
  * Plugin Name:       ГБОУ ООШ с. Парфёновка
  * Plugin URI:        https://github.com/parfenovka-school/wp-plugin
  * Description:       Плагин для сайта школы ГБОУ ООШ с. Парфёновка
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            ProjectSoft
  * Author URI:        https://github.com/ProjectSoft-STUDIONIONS/
  * License:           GPL-2.0+
@@ -25,28 +18,16 @@
  * Domain Path:       /languages
  */
 
-// If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-/**
- * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename this for your plugin and update it as you release new versions.
- */
 define( 'PARFENOVKA_VERSION', '1.0.0' );
 
-/**
- * The code that runs during plugin activation.
- */
 function activate_parfenovka() {
 	// Parfenovka_Activator::activate();
 }
 
-/**
- * The code that runs during plugin deactivation.
- */
 function deactivate_parfenovka() {
 	// Parfenovka_Deactivator::deactivate();
 }
@@ -84,8 +65,22 @@ function site_name() {
 	return get_bloginfo( 'name' );
 }
 
-function run_parfenovka() {
+function wpschool_insert_header() {
+?>
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+		<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png">
+		<link rel="icon" type="image/png" sizes="128x128" href="/favicon-128x128.png">
+		<link rel="icon" type="image/png" sizes="256x256" href="/favicon-256x256.png">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<link rel="apple-touch-icon" sizes="192x192" href="/android-chrome-192x192.png">
+		<link rel="manifest" href="/site.webmanifest">
+<?php
+}
 
+function run_parfenovka() {
 	function parfenovka_admin_footer () {
 		$site_title = get_bloginfo( 'name' );
 		$footer_text = array(
@@ -104,7 +99,11 @@ function run_parfenovka() {
 	remove_action( 'do_feed_rss',  'do_feed_rss',  10, 1 );
 	// remove_action( 'do_feed_rss2', 'do_feed_rss2', 10, 1 );
 	remove_action( 'do_feed_atom', 'do_feed_atom', 10, 1 );
-
+	
+	//add_filter('get_site_icon_url', function() {
+	//	return false;
+	//});
+	
 	//
 	add_action( 'wp', function(){
 		remove_action('wp_head', 'parent_post_rel_link', 10, 0); // prev link
@@ -132,6 +131,8 @@ function run_parfenovka() {
 		remove_filter('comment_text_rss', 'wp_staticize_emoji');
 	});
 
+	add_action( 'wp_head', 'wpschool_insert_header', 100 );
+	add_action( 'admin_head', 'wpschool_insert_header', 100 );
 	//
 	require_once(dirname(__FILE__) . '/Video.php');
 	require_once(dirname(__FILE__) . '/WpRunClass.php');
@@ -144,6 +145,19 @@ function run_parfenovka() {
 	
 }
 
+
+
+/**
+ * No-op WP_Site_Health class.
+ */
+/*
+class WP_Site_Health
+{
+    public function __construct() {}
+
+    public static function get_instance() {}
+}
+*/
 run_parfenovka();
 
 
